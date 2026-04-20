@@ -64,6 +64,17 @@ Goal forall n m : nat, n = 3 * m -> n + 1 = 3 * m + 1.
   reflexivity.
 Qed.
 
+Goal forall n m : nat, n = 2 * m -> m = 6 -> (n - 5) * m = 42.
+Proof.
+  intros n m nE mE.
+(* [rewrite] actually accepts any number of arguments, separated by commas,
+   which are all equalities that get rewritten one after the other.
+   Try [rewrite nE, mE.].
+*)
+  rewrite nE, mE.
+  reflexivity.
+Qed.
+
 (** Addition *)
 
 (* Natural numbers are defined by two rules:
