@@ -76,8 +76,9 @@ Qed.
 Goal forall n m : nat, n = 2 * m -> m = 6 -> (n - 5) * m = 42.
 Proof.
   intros n m nE mE.
-(* [rewrite] actually accepts any number of arguments, which are all equalities
-   that get rewritten one after the other. Try [rewrite nE mE.].
+(* [rewrite] actually accepts any number of arguments, separated by commas,
+   which are all equalities that get rewritten one after the other.
+   Try [rewrite nE, mE.].
 *)
 
 
